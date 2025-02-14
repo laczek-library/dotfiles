@@ -1,4 +1,4 @@
-# dot-files
+# dotfiles
 My current dotfiles
 
 I will be slowly adding everything.
