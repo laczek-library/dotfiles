@@ -27,7 +27,7 @@ Here’s a list of all (to be) configs and perhaps new repos:
 #### Terminal
 - fastfetch
 - tmux
-- terminal (Alicritty / ...)
+- terminal (Alacritty / ...)
 - zsh
 - Oh my zsh
 
