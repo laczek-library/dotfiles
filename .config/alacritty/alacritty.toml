@@ -1,0 +1,40 @@
+# UNFINISHED
+
+[general]
+working_directory = "C:\\Users\\Laczek"
+
+[window]
+dimensions = { columns = 120, lines = 60 }
+padding = { x = 10, y = 5 }
+decorations = "transparent"
+opacity = 0.95
+
+[scrolling]
+
+[font]
+normal = { family = "Sometype Mono", style = "Regular"}
+size = 14
+
+[colors]
+[colors.primary]
+#font
+foreground = "#f5f5f5"
+background = "#181818"
+bright_foreground = "#ffffff"
+cursor = { text = "#fbbc04", cursor = "#fbbc04"}
+
+[bell]
+
+[selection]
+
+[cursor]
+
+[terminal]
+
+[mouse]
+
+[hints]
+
+[keyboard]
+
+[debug]
