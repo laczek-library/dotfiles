@@ -1,3 +1,3 @@
 
 Cool site:
-[https://gruvbox-wallpapers.pages.dev/](Gruvbox Wallpapers)
+![https://gruvbox-wallpapers.pages.dev/](Gruvbox Wallpapers)
