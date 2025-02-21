@@ -1,8 +1,6 @@
 # Unoptimized, but finished
 
 [general]
-working_directory = "C:\\Users\\Laczek"
-
 
 [window]
 dimensions = { columns = 120, lines = 60 }
