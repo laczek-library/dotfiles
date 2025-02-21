@@ -1,7 +1,8 @@
-# UNFINISHED
+# Unoptimized, but finished
 
 [general]
 working_directory = "C:\\Users\\Laczek"
+
 
 [window]
 dimensions = { columns = 120, lines = 60 }
@@ -9,31 +10,73 @@ padding = { x = 10, y = 5 }
 decorations = "transparent"
 opacity = 0.95
 
+
 [scrolling]
+
 
 [font]
 normal = { family = "Sometype Mono", style = "Regular"}
 size = 14
 
+
 [colors]
 [colors.primary]
+
 #font
 foreground = "#f5f5f5"
+
 background = "#181818"
 bright_foreground = "#ffffff"
-cursor = { text = "#fbbc04", cursor = "#fbbc04"}
+
+#writing color
+#cursor = { text = "#fbbc04", cursor = "#ea4335"}
+
+#selection = { text = "", background = "" }
+
+[colors.normal]
+black = "#181818"
+red = "#ea4335"
+green = "#34a853"
+yellow = "#fbbc05"
+blue = "#4285f4"
+magenta = "#aa759f"
+cyan = "#46bdc6"
+white = "#dbdbdb"
+
+[colors.bright]
+black = "#333333"
+red = "#ef6e63"
+green = "#48c76a"
+yellow = "#fcc937"
+blue = "#72a4f7"
+magenta = "#bd95b5"
+cyan = "#6dcbd2"
+white = "#f5f5f5"
+
 
 [bell]
+animation = "EaseOutExpo"
+duration = 1
+color = "#f5f5f5"
 
 [selection]
+save_to_clipboard = true
 
 [cursor]
+style = { shape = "Underline", blinking = "On"}
+unfocused_hollow = true
 
 [terminal]
 
+#shell = { program = "/bin/zsh" }
+
 [mouse]
+bindings = [
+  { mouse = "Middle", action = "PasteSelection"}
+]
 
 [hints]
+#default
 
 [keyboard]
 
