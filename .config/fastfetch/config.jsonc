@@ -1,0 +1,171 @@
+// Inspired by https://github.com/usgraphics/TR-100
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "pipe": true,
+        "size": {"maxPrefix": "GB", "ndigits": 1},
+        "key": {
+            "width": 16
+        },
+        "separator": "│ ",
+        "percent": {
+            "type": 6
+        },
+        "bar": {
+            "borderLeft": "",
+            "borderRight": "",
+            "charElapsed": "▓",
+            "charTotal": "░",
+            "width": 44
+        },
+        "constants": [
+            "\u001b[42C"
+        ]
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "┌────────────┬──────────────────────────────────────────────┐"
+        },
+        {
+            "type": "os" ,
+            "key": "│ OS         │    {$1}",
+            "format": "{3}"
+        },
+        {
+            "type": "kernel",
+            "key": "│ KERNEL     │    {$1}",
+            "format": "{1} {2}"
+        },
+        {
+            "type": "de", 
+            "key": "│ DESKTOP    │    {$1}",
+            "format": "{2} {3}"
+        },
+        {
+            "type": "terminal",
+            "key": "│ TERMINAL   │    {$1}",
+            "format": "{5}"
+        },
+        {
+            "type": "shell",
+            "key": "│ SHELL      │    {$1}"
+        },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────────┤"
+        },
+        {
+            "type": "title",
+            "key": "│ HOSTNAME   │    {$1}",
+            "format": "{host-name}"
+        },
+        {
+            "type": "title",
+            "key": "│ USER       │    {$1}",
+            "format": "{user-name}"
+        },
+        {
+            "type": "packages",
+            "key": "│ PKGS       │    {$1}"
+        },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────────┤"
+        },
+        {
+            "type": "host",
+            "key": "│ MACHINE    │    {$1}",
+            "format": "{name}"
+        },
+        {
+            "type": "cpu",
+            "key": "│ PROCESSOR  │    {$1}",
+            "format": "{name}"
+        },
+        {
+            "type": "cpu",
+            "key": "│ CORES / F  │    {$1}",
+            "format": "{cores-physical} PHYSICAL CORES / {cores-logical} THREADS / {freq-max}{/freq-max}{freq-base}{/}",
+            "showPeCoreCount": false
+        },
+        {
+            "type": "display",
+            "key": "│ DISPLAY    │    {$1}",
+            "format": "{1}x{2} @ {3}Hz"
+        },
+        {
+            "type": "gpu",
+            "key": "│ GRAPHICS   │    {$1}",
+            "format": "{1} {2}"
+        },
+        {
+            "type": "gpu",
+            "key": "│ DRIVERS    │    {$1}",
+            "format": "{3}"
+        },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────────┤"
+        },
+        {
+            "type": "swap",
+            "key": "│ SWAP       │    {$1}",
+            "format": "{1} / {2}"
+        },
+        {
+            "type": "memory",
+            "key": "│ MEMORY     │    {$1}",
+            "format": "{used} / {total} [{percentage}]"
+        },
+        {
+            "type": "memory",
+            "key": "│ USAGE      │    {$1}",
+            "format": ""
+        },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────────┤"
+        },
+        {
+            "type": "disk",
+            "key": "│ VOLUME     │    {$1}",
+            "format": "{size-used} / {size-total} [{size-percentage}]",
+            "folders": "/"
+        },
+        {
+            "type": "disk",
+            "key": "│ DISK USAGE │    {$1}",
+            "format": ""
+        },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────────┤"
+        },
+        {
+            "type": "wallpaper" ,
+            "key": "│ WALLPAPER  │    {$1}",
+            "format": "{1}"
+        },
+        {
+            "type": "bluetooth" ,
+            "key": "│ BLUETOOTH  │    {$1}",
+            "format": "{1}"
+        },
+        {
+            "type": "users",
+            "key": "│ LAST LOGIN │    {$1}",
+            "format": "{login-time}{?client-ip} ({client-ip})",
+            "myselfOnly": true
+        },
+        {
+            "type": "uptime",
+            "key": "│ UPTIME     │    {$1}"
+        },
+        {
+            "type": "custom",
+            "format": "└────────────┴──────────────────────────────────────────────┘"
+        }
+    ]
+  }
