@@ -7,7 +7,7 @@ Here’s a list of all (to be) configs and perhaps new repos:
 #### System
 - grub
 - wallpapers
-- rofi
+- rofi / tofi
 - dunst
 - thunar
 - WM (hyprland / i3 / qtile / ...)
