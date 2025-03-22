@@ -1,0 +1,77 @@
+console_title_template = 'Alacritty {{.PWD}}'
+version = 3
+final_space = true
+
+# Gruvbox Color Palette
+[palette]
+  black = '#3c3836'
+  blue = '#458588'
+  green = '#8ec07c'
+  orange = '#fe8019'
+  red = '#cc241d'
+  white = '#f9f5d7'
+  yellow = '#d79921'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+  type = 'session'
+  style = 'plain'
+  foreground = 'p:green'    
+  template = '@{{ .UserName }}   '
+ 
+  [[blocks.segments]]
+  type = 'path'
+  style = 'plain'
+  background = 'transparent'
+  foreground = 'p:blue'    
+  template = '{{.Path}}'
+
+    [blocks.segments.properties]
+    style = 'full'
+
+
+[[blocks]]
+type = 'rprompt'
+overflow = 'hidde'
+alignment = 'right'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'p:green'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+  type = 'text'
+  style = 'plain'
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}yellow{{end}}",
+  ]
+  background = 'transparent'
+  foreground = 'p:yellow'    
+  template = '⮞'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}yellow{{end}}",
+  ]
+  background = 'transparent'
+  foreground = 'p:yellow'    
+  template = '⮞ '
+
+[secondary_prompt]
+  foreground = 'p:green'
+  background = 'transparent'
+  template = '⮞⮞'
