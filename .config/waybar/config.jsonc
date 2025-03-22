@@ -1,0 +1,246 @@
+// Inspired by Ottomated's config: https://github.com/ottomated/dotfiles/tree/main/home/dot_config/waybar
+
+// -*- mode: jsonc -*-
+[
+{
+    "output": "DP-1",
+    "height": 36, 
+    "spacing": 6,
+    "fixed-center": true,
+    "modules-left": [
+        "clock",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+	"hyprland/window"
+    ],
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+	"bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "hyprland/language",
+        "tray"
+    ],
+
+    // Modules configuration
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+	 "all-outputs": false,
+         "warp-on-scroll": false,
+	 "window-rewrite-default": "?",
+    	 "window-rewrite": {
+      		"class<org.mozilla.firefox>": "\ue007",
+      		"Brave": "\uf0ac",
+      		"class<pavucontrol>": "\uf028",
+      		"class<alacritty>": "\uf120",
+      		"class<code>": "\uf121",
+      		"class<obsidian>": "\uf518",
+      		"class<spotify>": "\uf1bc",
+      		"class<steam>": "\uf1b7",
+      		"class<discord>": "\uf392",
+      		"class<thunar>": "\uf07c",
+		"GIMP": "\uf1fc",
+		"class<com.obsproject.Studio>": "\uf192"
+	 },
+         "format": "{icon} {windows}",
+	 "format-icons": {
+		 "1" : "1",
+		 "2" : "2",
+		 "3" : "3",
+		 "4" : "4",
+		 "5" : "5",
+		 "6" : "6",
+		 "7" : "7",
+		 "8" : "8",
+		 "9" : "9",
+		 "10" : "0"
+	 },
+         "persistent-workspaces": {
+	   "DP-1": [1, 3, 5, 7, 9],
+	   "HDMI-A-1": [2, 4, 6, 8, 0]
+	 }
+     },
+    "hyprland/window": {
+    	"rewrite": {
+		"(.*) - Youtube - Brave$" : "\uf008 $1",
+		"(?!.*Youtube)(.*) - Brave$" : "\uf0ac $1",
+		"(.*) - Discord" : "\uf392 $1",
+		"(.*) - Thunar" : "\uf07c $1",
+		"(.*) - Visual Studio Code" : "\uf121 $1",
+		"Steam" : "\uf1b7 Steam",
+		"(.*) — Mozilla Firefox" : "\ue007 $1",
+		"(.*) GIMP" : "\uf1fc Gimp",
+		"OBS (.*)" : "\uf192 OBS",
+		"Spotify Premium" : "\uf1bc Spotify",
+		//"sudo vim (.*)" : "\uf27d $1",
+		//"sudo (?!.*vim)((.*)" : "\uf120 $1",
+		//"laczek@soteria:(.*)" : "\uf120 $1",
+		"Alacritty (.*)" : "\uf120  $1",
+		"(.*) - Obsidian (.*)" : "\uf518  $1"
+	},	
+	"separate-outputs": true ,
+	"max-length" : 50
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "interval" : 1,
+	"format": "\uf073 {:%a %b %d %H:%M:%S}"
+	//"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        //"format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU {usage}% \uf2db",
+        "states": {"warning": 70, "critical": 90 }
+    },
+    "memory": {
+        "format": "RAM {used:0.1f} GB \uf538"
+    },
+    "temperature": {
+        "critical-threshold": 60,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["\uf2ca", "\uf2c9", "\uf2c7"]
+    },
+    "network": {
+	"interval": 2,
+        "format-wifi": "\uf063 {bandwidthDownBits} | \uf062 {bandwidthUpBits} | {essid} ({signalStrength}%) \uf1eb",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected \uf695"
+    },
+    "bluetooth": {
+        "format": "{status} ",
+	"format-connected": "{device_alias} ",
+        "on-click": "blueman-manager"
+	//"format-connected": " {device_alias} {device_battery_percentage}%"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+	"format-muted": " {format_source}",
+        "format-source": "{volume}% \uf130",
+        "format-source-muted": "\uf131",
+        "format-icons": {
+	  "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "exec": "$HOME/.config/waybar/scripts/media/display.ts",
+        "on-click": "$HOME/.config/waybar/scripts/media/actions.ts playpause",
+        "restart-interval": 120,
+        "smooth-scrolling-threshold": 0,
+        "on-scroll-down": "$HOME/.config/waybar/scripts/media/actions.ts next",
+        "on-click-right": "$HOME/.config/waybar/scripts/media/actions.ts next",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/media/actions.ts previous",
+        "return-type": "json"
+     }	
+},
+
+{
+    "output": "HDMI-A-1",
+    "position": "top",
+    "height": 36, 
+    "spacing": 6,
+    "fixed-center": true,
+    "modules-left": [
+        "clock",
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+	"bluetooth",
+        "temperature",
+        "tray"
+    ],
+
+    // Modules configuration
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+	 "all-outputs": false,
+         "warp-on-scroll": false,
+	 "window-rewrite-default": "?",
+    	 "window-rewrite": {
+      		"class<org.mozilla.firefox>": "\ue007",
+      		"Brave": "\uf0ac",
+      		"class<pavucontrol>": "\uf028",
+      		"class<alacritty>": "\uf120",
+      		"class<code>": "\uf121",
+      		"class<obsidian>": "\uf518",
+      		"class<spotify>": "\uf1bc",
+      		"class<steam>": "\uf1b7",
+      		"class<discord>": "\uf392",
+      		"class<thunar>": "\uf07c",
+		"GIMP": "\uf1fc",
+		"class<com.obsproject.Studio>": "\uf192"
+	 },
+         "format": "{icon} {windows}",
+	 "format-icons": {
+		 "1" : "1",
+		 "2" : "2",
+		 "3" : "3",
+		 "4" : "4",
+		 "5" : "5",
+		 "6" : "6",
+		 "7" : "7",
+		 "8" : "8",
+		 "9" : "9",
+		 "10" : "0"
+	 },
+         "persistent-workspaces": {
+	   "DP-1": [1, 3, 5, 7, 9],
+	   "HDMI-A-1": [2, 4, 6, 8, 0]
+	 }
+     },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "interval" : 1,
+	"format": "\uf073 {:%a %b %d %H:%M:%S}"
+	//"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        //"format-alt": "{:%Y-%m-%d}"
+    },
+    "temperature": {
+        "critical-threshold": 60,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["\uf2ca", "\uf2c9", "\uf2c7"]
+    },
+    "bluetooth": {
+        "format": "{status} ",
+	"format-connected": "{device_alias} ",
+        "on-click": "blueman-manager"
+	//"format-connected": " {device_alias} {device_battery_percentage}%"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+	"format-muted": " {format_source}",
+        "format-source": "{volume}% \uf130",
+        "format-source-muted": "\uf131",
+        "format-icons": {
+	  "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "exec": "$HOME/.config/waybar/scripts/media/display.ts",
+        "on-click": "$HOME/.config/waybar/scripts/media/actions.ts playpause",
+        "restart-interval": 120,
+        "smooth-scrolling-threshold": 0,
+        "on-scroll-down": "$HOME/.config/waybar/scripts/media/actions.ts next",
+        "on-click-right": "$HOME/.config/waybar/scripts/media/actions.ts next",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/media/actions.ts previous",
+        "return-type": "json"
+     }	
+
+}
+]
