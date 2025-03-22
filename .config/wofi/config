@@ -1,0 +1,4 @@
+width = 1500 
+height = 300 
+allow_images = true
+show_scrollbar = false
