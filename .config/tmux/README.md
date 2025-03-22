@@ -1,0 +1,2 @@
+### theme 
+- egel/tmux-gruvbox
