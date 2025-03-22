@@ -8,7 +8,9 @@ Here’s a list of all (to be) configs and perhaps new repos:
 ### System
 - tofi
 - dunst
-- waybar  
+- waybar
+- clipboard / wofi
+
 ### Terminal
 - fastfetch
 - tmux
@@ -36,8 +38,6 @@ Here’s a list of all (to be) configs and perhaps new repos:
 - icons
   - Tela manjaro
   - Bibata modern
-- clipboard
-  - wofi 
 
 ### Apps
 - syncthing
