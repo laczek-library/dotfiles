@@ -1,0 +1,44 @@
+* {
+	font-family: "FiraCode", monospace;
+}
+
+window {
+	background-color: #cc241d;
+}
+
+#input {
+	padding: 2px 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #333333;
+	color: white;
+	margin-bottom: 20px;
+}
+
+#inner-box {
+	background-color: #474747;
+	border-radius: 5px;
+}
+
+#outer-box {
+	margin: 2px;
+	padding: 20px;
+	background-color: #282828;
+}
+
+#text {
+	padding: 4px;
+	color: #f5f5f5;
+}
+
+#entry:nth-child(even){
+	background-color: #333333;
+}
+
+#entry:selected {
+	background-color: #cc241d;
+}
+
+#text:selected {
+	background: transparent;
+}
